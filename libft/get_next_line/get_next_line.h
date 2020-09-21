@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hellnhell <hellnhell@student.42.fr>        +#+  +:+       +#+        */
+/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 12:03:01 by emartin-          #+#    #+#             */
-/*   Updated: 2020/05/21 11:37:56 by hellnhell        ###   ########.fr       */
+/*   Updated: 2020/09/21 17:43:01 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define BUFFER_SIZE 16
 
 int		get_next_line(int fd, char **line);
 char	*ft_strchr(const char *s, int c);
