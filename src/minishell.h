@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:44:16 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/21 18:47:02 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/21 19:42:02 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ typedef struct		s_tab
 {
 	char	*line;
 	char	**path;
+	char	**argv;
+	char	*join;
 }					t_tab;
 
 char	*read_line(t_tab *t);
 char	*read_path(t_tab *t, char **env);
+void	check_path(t_tab *t);
 
 
 #endif
