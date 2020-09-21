@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hellnhell <hellnhell@student.42.fr>        +#+  +:+       +#+         #
+#    By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/09/20 19:02:05 by hellnhell        ###   ########.fr        #
+#    Updated: 2020/09/21 18:12:28 by emartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    =   minishell
 
 SRCS    =   src/main.c              \
+			src/read_path.c			\
    
 LIBFT   =   libft/libft.a
 
@@ -39,6 +40,6 @@ fclean  :   clean
 		rm -rf $(NAME) $(LIBFT)
 
 re      :   fclean
-		rm -rf $(NAME)
+		rm -rf $(NAME) 
 
 .PHONY  :   all clean fclean re

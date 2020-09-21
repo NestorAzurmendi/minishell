@@ -1,46 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/20 18:29:03 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/21 18:42:08 by emartin-         ###   ########.fr       */
+/*   Created: 2020/09/21 18:04:38 by emartin-          #+#    #+#             */
+/*   Updated: 2020/09/21 18:49:11 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-
-char	*read_line(t_tab *t)
+char  *read_path(t_tab *t, char **env)
 {
-	char	*line;
-	
-	line = NULL;
-	get_next_line(0, &t->line);
-	return(t->line);
-}
+	int		i;
 
-void	initt(t_tab *t)
-{
-	t->line = NULL;
-	t->path = NULL;
-}
-
-int		main(int argc,char **argv, char **env)
-{
-	t_tab	*t;
-
-	t = malloc (sizeof(t_tab));
-	initt(t);
-	(void)argc;
-	(void)env;
-	while (1)
+	i = 0;
+	while (env[i])
 	{
-		ft_putstr_fd("marishell% ", 1);
-		t->line = read_line(t);
-		read_path(t, env);
-		argv = ft_split(t->line, ' ');
+		if (ft_strncmp("PATH=", env[i], 5) == 0)
+			t->path = ft_split(&env[i][5], ':');
+		i++;
 	}
+	return (*t->path);
 }
