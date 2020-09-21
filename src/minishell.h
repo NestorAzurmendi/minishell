@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:44:16 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/21 18:47:02 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/21 20:40:13 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_tab
 
 char	*read_line(t_tab *t);
 char	*read_path(t_tab *t, char **env);
+char	**split_line(char *line);
 
 
 #endif
