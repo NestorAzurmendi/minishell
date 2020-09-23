@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:29:03 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/24 18:14:07 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/24 20:25:37 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-
 char	*read_line(t_tab *t)
 {
 	char	*line;
-	
+
 	line = NULL;
 	get_next_line(0, &t->line);
 	return(t->line);
@@ -38,6 +37,7 @@ int		main(int argc, char **argv, char **env)
 	(void)argc;
 	(void)argv;
 	(void)env;
+	(void)splits;
 	while (1)
 	{
 		ft_putstr_fd("marishell% ", 1);
