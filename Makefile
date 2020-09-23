@@ -6,7 +6,7 @@
 #    By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/09/21 18:12:28 by emartin-         ###   ########.fr        #
+#    Updated: 2020/09/22 19:38:24 by emartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME    =   minishell
 
 SRCS    =   src/main.c              \
 			src/read_path.c			\
+			src/split_line.c		\
+			src/ft_strjoin_sl.c
    
 LIBFT   =   libft/libft.a
 
