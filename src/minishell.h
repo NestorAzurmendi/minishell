@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:44:16 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/23 19:16:22 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/24 18:13:54 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct		s_tab
 
 char	*read_line(t_tab *t);
 void	read_path(t_tab *t, char **env);
-void	check_path(t_tab *t);
+void	check_path(t_tab *t, char **env);
 char	**split_line(char *line);
 void 	*ft_realloc(void *ptr, size_t originalsize, size_t newsize);
 char	*ft_strtok(char *str, char *sepa);

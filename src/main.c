@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:29:03 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/23 19:42:31 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/24 18:14:07 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,7 @@ int		main(int argc, char **argv, char **env)
 		t->line = read_line(t);
 		read_path(t, env);
 		t->tokens = split_line(t->line);
-		while (t->tokens[i])
-		{
-			printf("valor de tokens=    %s\n", t->tokens[i]);
-			i++;
-		}
-
-		check_path(t);
+		check_path(t, env);
 	}
 
 }

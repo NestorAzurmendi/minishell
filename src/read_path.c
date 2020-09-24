@@ -6,13 +6,13 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:04:38 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/24 17:58:09 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/24 18:14:18 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void		check_path(t_tab *t)
+void		check_path(t_tab *t, char **env)
 {
 	int		i;
 	int		j;
@@ -32,13 +32,12 @@ void		check_path(t_tab *t)
 			tmp = aux;
 			//printf("valor de aux=    %s\n", aux);
 			//printf("valor de tokens=    %s\n", t->tokens[0]);
-			j = execve(tmp, t->tokens, t->our_env);
+			j = execve(tmp, t->tokens, env);
 			if (j < 0)
 				//printf("%s\n", strerror(errno));
 			free(aux);
 			i++;
 		}
-		
 	}
 }
 
