@@ -6,7 +6,7 @@
 /*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:29:03 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/23 19:43:26 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/09/24 18:59:37 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,18 @@ int		main(int argc,char **argv, char **env)
 	(void)argv;
 	(void)env;
 	(void)splits;
-		ft_pwd();
 	while (1)
 	{
 		ft_putstr_fd("marishell% ", 1);
 		t->line = read_line(t);
 		read_path(t, env);
 		//argv = ft_split(t->line, ' ');
-		split_line(t->line);
-		printf("%s %s %s\n", splits[0], splits[1], splits[2]);
+		splits = split_line(t->line);
+		if(ft_strncmp(splits[0], "pwd", 3) == 0)
+			ft_pwd();
+		if(ft_strncmp(splits[0], "echo", 4) == 0)
+			ft_echo(&splits[1]);
+		if(ft_strncmp(splits[0], "cd", 2) == 0)
+			ft_cd(&splits[1]);
 	}
 }

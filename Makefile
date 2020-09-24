@@ -6,7 +6,7 @@
 #    By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/09/23 18:51:04 by nazurmen         ###   ########.fr        #
+#    Updated: 2020/09/24 19:06:17 by nazurmen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS    =   src/main.c              \
 			src/split_line.c		\
 			src/echo.c				\
 			src/pwd.c				\
+			src/cd.c				\
 
 LIBFT   =   libft/libft.a
 
