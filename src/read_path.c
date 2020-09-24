@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:04:38 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/23 19:41:17 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/24 17:58:09 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,24 @@ void		check_path(t_tab *t)
 
 	i = 0;
 	
-	if(t->tokens == NULL)
-		ft_putstr_fd("ERROR tokens\n", 1);
 	//exit q hay q gestionar con errno
 	while(t->path[i])
 	{	
-		aux = ft_strjoin_sl(t->path[i], t->tokens[0]);
-		tmp = aux;
-		//printf("valor de aux=    %s\n", aux);
-		//printf("valor de tokens=    %s\n", t->tokens[0]);
-		j = execve(tmp, t->tokens, t->our_env);
-		if (j < 0)
-			//printf("%s\n", strerror(errno));
-		i++;
+		if (t->tokens[0] == NULL)
+			break ;
+		else
+		{
+			aux = ft_strjoin_sl(t->path[i], t->tokens[0]);
+			tmp = aux;
+			//printf("valor de aux=    %s\n", aux);
+			//printf("valor de tokens=    %s\n", t->tokens[0]);
+			j = execve(tmp, t->tokens, t->our_env);
+			if (j < 0)
+				//printf("%s\n", strerror(errno));
+			free(aux);
+			i++;
+		}
+		
 	}
 }
 
