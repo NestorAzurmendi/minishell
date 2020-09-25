@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:04:38 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/24 18:14:18 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/25 17:56:56 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void		check_path(t_tab *t, char **env)
 	char	*tmp;
 
 	i = 0;
-	
+
 	//exit q hay q gestionar con errno
 	while(t->path[i])
-	{	
+	{
 		if (t->tokens[0] == NULL)
 			break ;
 		else
@@ -44,11 +44,14 @@ void		check_path(t_tab *t, char **env)
 void	read_path(t_tab *t, char **env)
 {
 	int		i;
+	char *test;
 
 	i = 0;
+	printf("%x\n",	t->our_env);
 	while (env[i])
 	{
-		t->our_env[i] = ft_strdup(env[i]);
+		//t->our_env[i] = ft_strdup(env[i]);
+		ft_putstr_fd("test\n", 1);
 		if (ft_strncmp("PATH=", env[i], 5) == 0)
 			t->path = ft_split(&env[i][5], ':');
 		i++;
