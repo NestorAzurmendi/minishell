@@ -6,7 +6,7 @@
 #    By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/09/25 17:20:14 by nazurmen         ###   ########.fr        #
+#    Updated: 2020/09/25 19:04:57 by nazurmen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS	=   src/main.c              \
 			src/pwd.c				\
 			src/cd.c				\
 			src/ft_strjoin_sl.c		\
+			src/check_our_implement.c		\
 			libft/libft.a
 
 GCC			=   @gcc -Wall -Wextra -Werror -g3

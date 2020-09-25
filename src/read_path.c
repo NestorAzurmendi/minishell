@@ -6,7 +6,7 @@
 /*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:04:38 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/25 17:56:56 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/09/25 18:32:06 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,9 @@ void	read_path(t_tab *t, char **env)
 	char *test;
 
 	i = 0;
-	printf("%x\n",	t->our_env);
 	while (env[i])
 	{
 		//t->our_env[i] = ft_strdup(env[i]);
-		ft_putstr_fd("test\n", 1);
 		if (ft_strncmp("PATH=", env[i], 5) == 0)
 			t->path = ft_split(&env[i][5], ':');
 		i++;

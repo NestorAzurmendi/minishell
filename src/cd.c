@@ -6,13 +6,13 @@
 /*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 19:04:47 by nazurmen          #+#    #+#             */
-/*   Updated: 2020/09/24 19:16:18 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/09/25 18:54:36 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void ft_cd(char **args)
+int	ft_cd(char **args)
 {
 	char *path;
 	int i;
@@ -32,4 +32,5 @@ void ft_cd(char **args)
 		ft_putstr_fd(path, 1);
 		ft_putchar_fd('\n', 1);
 	}
+	return(0);
 }

@@ -6,13 +6,13 @@
 /*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 20:18:50 by nazurmen          #+#    #+#             */
-/*   Updated: 2020/09/24 18:22:08 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/09/25 18:53:58 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void ft_pwd(void)
+int	ft_pwd(void)
 {
 	char *buff;
 
@@ -21,4 +21,5 @@ void ft_pwd(void)
 	ft_putstr_fd(buff, 1);
 	ft_putchar_fd('\n', 1);
 	free(buff);
+	return(0);
 }
