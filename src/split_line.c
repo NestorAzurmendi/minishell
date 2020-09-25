@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 18:37:34 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/23 19:44:05 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/09/25 19:08:39 by nazurmen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char	*ft_strtok(char *str, char *sepa)
 				{
 					*stock = '\0';
 					i = 27;
-					printf("hola\n");
 					break;
 				}
 				j++;
