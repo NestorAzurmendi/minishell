@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:29:03 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/09/25 19:08:01 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/10/05 21:13:17 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,4 @@ int		main(int argc, char **argv, char **env)
 			check_path(t, env);
 		}
 	}
-
 }

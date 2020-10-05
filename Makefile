@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+         #
+#    By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/09/25 19:04:57 by nazurmen         ###   ########.fr        #
+#    Updated: 2020/10/05 17:30:22 by emartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ SRCS	=   src/main.c              \
 			src/pwd.c				\
 			src/cd.c				\
 			src/ft_strjoin_sl.c		\
-			src/check_our_implement.c		\
-			libft/libft.a
+			src/check_our_implement.c		
 
 GCC			=   @gcc -Wall -Wextra -Werror -g3
 OBJS		=   $(SRCS:.c=.o)

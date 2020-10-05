@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   split_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 18:37:34 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/25 19:08:39 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/10/05 21:09:32 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "minishell.h"
 
 #include "minishell.h"
 
@@ -119,7 +117,8 @@ char	**split_line(char *line)
 	{
 		tokens[position] = token;
 		position++;
-		if (position >= buffsize){
+		if (position >= buffsize)
+		{
 			buffsize += 16;
 			tokens = ft_realloc(tokens, buffsize - 16, buffsize);
 			if (!tokens)
