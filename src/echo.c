@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 19:32:51 by nazurmen          #+#    #+#             */
-/*   Updated: 2020/10/05 21:22:07 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/10/08 19:18:31 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int	ft_echo(char **args)
 	i = 0;
 	while (args[i])
 	{
+		if (ft_strchr(args[i], 34) || ft_strchr(args[i], 39))
+		{
+			ft_split_com(args[i], 34);
+			printf("args   : %s\n", args[i]);
+		}	
 		if (ft_strncmp("-n", args[i], 2) == 0)
 		{
 			i++;

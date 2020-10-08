@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nazurmen <nazurmen@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:04:38 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/25 18:32:06 by nazurmen         ###   ########.fr       */
+/*   Updated: 2020/10/08 17:37:46 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ void		check_path(t_tab *t, char **env)
 		{
 			aux = ft_strjoin_sl(t->path[i], t->tokens[0]);
 			tmp = aux;
-			//printf("valor de aux=    %s\n", aux);
-			//printf("valor de tokens=    %s\n", t->tokens[0]);
 			j = execve(tmp, t->tokens, env);
-			if (j < 0)
+			//if (j < 0)
 				//printf("%s\n", strerror(errno));
 			free(aux);
 			i++;

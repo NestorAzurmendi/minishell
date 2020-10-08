@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:29:03 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/10/05 21:13:17 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/10/08 18:34:09 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int		main(int argc, char **argv, char **env)
 	{
 		ft_putstr_fd("marishell% ", 1);
 		t->line = read_line(t);
-		t->tokens = split_line(t->line);
+		t->tokens = ft_split(t->line, ' ');
+		//t->tokens = split_line(t->line);
 		if(check_our_implement(t))
 		{
 			read_path(t, env);

@@ -6,7 +6,7 @@
 #    By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/10/05 17:30:22 by emartin-         ###   ########.fr        #
+#    Updated: 2020/10/08 18:43:38 by emartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS	=   src/main.c              \
 			src/echo.c				\
 			src/pwd.c				\
 			src/cd.c				\
-			src/ft_strjoin_sl.c		\
+			src/utils.c		\
 			src/check_our_implement.c		
 
 GCC			=   @gcc -Wall -Wextra -Werror -g3

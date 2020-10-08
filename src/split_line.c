@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 18:37:34 by emartin-          #+#    #+#             */
-/*   Updated: 2020/10/05 21:09:32 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/10/08 17:27:20 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_strtok(char *str, char *sepa)
 	len = ft_strlen(sepa);
 	if (str != NULL)
 		stock = ft_strdup(str);
+
 	while (*stock != '\0' && i <= 1)
 	{
 		if (i == 0)
