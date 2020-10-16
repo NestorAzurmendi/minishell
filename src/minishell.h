@@ -6,7 +6,7 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/20 18:44:16 by hellnhell         #+#    #+#             */
-/*   Updated: 2020/10/08 18:45:41 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/10/16 17:46:25 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ typedef struct		s_tab
 {
 	char		*line;
 	char		**tokens;
-	char		**our_env;
+	char		**orders;
 	char		**path;
-	char		**path_token;
 }					t_tab;
 
 char	*read_line(t_tab *t);
 void	read_path(t_tab *t, char **env);
-void	check_path(t_tab *t, char **env);
+int	check_path(t_tab *t, char **env);
 char	**split_line(char *line);
 void 	*ft_realloc(void *ptr, size_t originalsize, size_t newsize);
 char	*ft_strtok(char *str, char *sepa);
@@ -41,9 +40,7 @@ int		ft_echo(char **args);
 int		ft_pwd(void);
 int		ft_cd(char **args);
 int		check_our_implement(t_tab *t);
-char	**ft_split_com(char const *s, char c);
-
-
-
+char	**ft_split_com(char const *s, char c, t_tab *t);
+int		not_command_error(t_tab *t);
 
 #endif

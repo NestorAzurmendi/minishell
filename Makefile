@@ -6,7 +6,7 @@
 #    By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 18:30:24 by hellnhell         #+#    #+#              #
-#    Updated: 2020/10/08 18:43:38 by emartin-         ###   ########.fr        #
+#    Updated: 2020/10/13 17:18:02 by emartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ SRCS	=   src/main.c              \
 			src/echo.c				\
 			src/pwd.c				\
 			src/cd.c				\
-			src/utils.c		\
-			src/check_our_implement.c		
+			src/ft_strjoin_sl.c		\
+			src/check_our_implement.c	\
+			src/split_dc.c	
 
 GCC			=   @gcc -Wall -Wextra -Werror -g3
 OBJS		=   $(SRCS:.c=.o)

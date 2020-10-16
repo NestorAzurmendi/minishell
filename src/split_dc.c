@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   split_dc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 19:29:33 by emartin-          #+#    #+#             */
-/*   Updated: 2020/10/08 19:33:47 by emartin-         ###   ########.fr       */
+/*   Created: 2020/10/13 17:17:10 by emartin-          #+#    #+#             */
+/*   Updated: 2020/10/16 20:22:29 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-char			*ft_strjoin_sl(const char *s1, const char *s2)
-{
-	int		pos;
-	char	*dest;
-
-	if (!(dest = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
-		return (NULL);
-	pos = 0;
-	while (*s1)
-		dest[pos++] = *s1++;
-	dest[pos++] = '/';
-	while (*s2)
-		dest[pos++] = *s2++;
-	dest[pos] = '\0';
-	return (dest);
-}
-
-
-static int			ft_words(char const *s, char c)
+static int			ft_words(char const *s, char c, t_tab *t)
 {
 	int		w;
 	int		i;
@@ -39,10 +21,19 @@ static int			ft_words(char const *s, char c)
 	w = 0;
 	while (s[i] != 0)
 	{
-		if (s[i] == c && s[i] != 0)
+		if (s[i] != c && s[i] != 0)
 		{
-			w++;
-			while (s[i] == c && s[i] != 0)
+			if (s[i] != 39)
+			{
+				w++;	
+				while (s[i] != c && s[i] != 0)
+				{
+					if (s[i] == 39)
+						break ;
+					i++;	
+				}
+			}
+			else
 				i++;
 		}
 		else
@@ -56,42 +47,65 @@ static int			ft_letters(const char *s, char c)
 	int		i;
 	int		l;
 
+
 	i = 0;
 	l = 0;
-	while (s[i] != 0 && s[i] == c)
+	while (s[i] != 0 && s[i] != c)
 	{
-		i++;
-		++l;
+		i++;		
+		l++;
 	}
-	printf("letters  : %d\n", l);
 	return (l);
 }
 
-static char			**prinsplit(char const *s, char c, char **str, int x)
+static char			**prinsplit(char const *s, char c, char **str, int x, t_tab *t)
 {
 	int		l;
 	int		i;
+	int		j;
 	int		w;
+	int		k;
+	unsigned int start;
+	size_t len;
 
 	i = 0;
 	w = 0;
-	
+	start = 0;
+	//if (!(strq = (char**)malloc(sizeof(char*) * (x + 1))))
+	//	return (NULL);
 	while (s[i] != 0 && w < x)
 	{
-		if (s[i] == c && s[i] != 0)
+		if (s[i] != c && s[i] != 0)
 		{
 			l = 0;
 			if (!(str[w] = (char*)malloc(sizeof(char) *
 			(ft_letters(s, c) + 1))))
 				return (NULL);
-			printf("imm in split\n");
-			printf("s[i]   : %c\n", s[i]);
 			while (s[i] != c && s[i] != 0)
 			{
-				str[w][l++] = s[i++];
-				printf("str   : %s\n", str[w]);
+				len = 0;
+				j = 0;
+				printf("si-----%c\n", s[i]);
+				if (s[i] == 39)
+				{
+					i++;
+					start = i;
+					while(s[i] != 39 && s[i]!= 0)
+					{
+						i++;
+						j++;
+					}	
+					len += j;
+					str[w] = ft_substr(s, start, len);
+					i++;
+					return(strq) ;
+				}
+				else	
+				{
+					str[w][l++] = s[i++];
+					str[w][l] = '\0';
+				}	
 			}
-			str[w][l] = '\0';
 			w++;
 		}
 		else
@@ -101,16 +115,15 @@ static char			**prinsplit(char const *s, char c, char **str, int x)
 	return (str);
 }
 
-char				**ft_split_com(char const *s, char c)
+char				**ft_split_com(char const *s, char c, t_tab *t)
 {
 	char	**str;
 	int		x;
 
 	if (!s)
 		return (NULL);
-	x = ft_words(s, c);
-	printf("words   : %d\n", x);
+	x = ft_words(s, c, t);
 	if (!(str = (char**)malloc(sizeof(char*) * (x + 1))))
 		return (NULL);
-	return (prinsplit(s, c, str, x));
+	return (prinsplit(s, c, str, x, t));
 }

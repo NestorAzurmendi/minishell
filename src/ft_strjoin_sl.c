@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   echo.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 19:32:51 by nazurmen          #+#    #+#             */
-/*   Updated: 2020/10/13 20:07:46 by emartin-         ###   ########.fr       */
+/*   Created: 2020/09/22 19:29:33 by emartin-          #+#    #+#             */
+/*   Updated: 2020/10/13 17:16:05 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_echo(char **args)
+char			*ft_strjoin_sl(const char *s1, const char *s2)
 {
-	int i;
-	int flag;
+	int		pos;
+	char	*dest;
 
-	flag = 0;
-	i = 0;
-	while (args[i])
-	{
-		if (ft_strncmp("-n", args[i], 2) == 0)
-		{
-			i++;
-			flag++;
-		}
-		//printf("i----%i\nargs-----%s\n",i, args[i]);
-		ft_putstr_fd(args[i], 1);
-		if(args[++i])
-			ft_putchar_fd(' ', 1);
-	}
-	if (flag)
-		ft_putchar_fd('%', 1);
-	ft_putchar_fd('\n', 1);
-	return(0);
+	if (!(dest = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		return (NULL);
+	pos = 0;
+	while (*s1)
+		dest[pos++] = *s1++;
+	dest[pos++] = '/';
+	while (*s2)
+		dest[pos++] = *s2++;
+	dest[pos] = '\0';
+	return (dest);
 }
