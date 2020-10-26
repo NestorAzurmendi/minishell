@@ -6,11 +6,9 @@
 /*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 18:37:34 by emartin-          #+#    #+#             */
-/*   Updated: 2020/09/23 19:44:05 by emartin-         ###   ########.fr       */
+/*   Updated: 2020/10/08 17:27:20 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "minishell.h"
 
 #include "minishell.h"
 
@@ -27,6 +25,7 @@ char	*ft_strtok(char *str, char *sepa)
 	len = ft_strlen(sepa);
 	if (str != NULL)
 		stock = ft_strdup(str);
+
 	while (*stock != '\0' && i <= 1)
 	{
 		if (i == 0)
@@ -52,7 +51,6 @@ char	*ft_strtok(char *str, char *sepa)
 				{
 					*stock = '\0';
 					i = 27;
-					printf("hola\n");
 					break;
 				}
 				j++;
@@ -120,7 +118,8 @@ char	**split_line(char *line)
 	{
 		tokens[position] = token;
 		position++;
-		if (position >= buffsize){
+		if (position >= buffsize)
+		{
 			buffsize += 16;
 			tokens = ft_realloc(tokens, buffsize - 16, buffsize);
 			if (!tokens)

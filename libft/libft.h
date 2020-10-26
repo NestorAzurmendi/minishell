@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hellnhell <hellnhell@student.42.fr>        +#+  +:+       +#+        */
+/*   By: emartin- <emartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 10:59:31 by emartin-          #+#    #+#             */
-/*   Updated: 2020/04/24 20:10:29 by hellnhell        ###   ########.fr       */
+/*   Updated: 2020/10/21 17:28:39 by emartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int				ft_count_lines(char *str);
 size_t			ft_line_len(const char *s);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
+int				ft_strcmp(const char *s1, const char *s2);
 
 #endif
